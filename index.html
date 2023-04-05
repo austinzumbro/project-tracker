@@ -17,31 +17,138 @@
     <header>
       <h1>Project Tracker</h1>
       <p>Welcome user!</p>
-      <p>Current date and time.</p>
+      <p id="current-date-time"></p>
     </header>
 
     <!-- TODO:  Add Bootstrap Modal -->
 
     <section id="main-section">
-      <section id="new-project">
-        <button id="new-project-button" class="btn btn-primary">
-          Add a Project
-        </button>
+      <section class="row">
+        <section id="new-project" class="col-6">
+          <section class="card">
+            <div class="card-body">
+              <h2 class="card-title">How to Use this App</h2>
+              <p class="card-text">
+                Instructions are here! Click the button to open a modal.
+              </p>
+            </div>
+            <button
+              id="new-project-button"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#addProjectModal"
+            >
+              Add a Project
+            </button>
+
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="addProjectModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Modal title
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- Start of Form Code -->
+                    <form>
+                      <div class="row mb-3">
+                        <label
+                          for="inputProjectName"
+                          class="col-sm-2 col-form-label"
+                          >Project name</label
+                        >
+                        <div class="col-sm-10">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="inputProjectName"
+                          />
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <label
+                          for="selectProjectType"
+                          class="col-sm-2 col-form-label"
+                          >Project Type</label
+                        >
+                        <select
+                          class="form-select"
+                          aria-label="Default select example"
+                        >
+                          <option selected>Open this select menu</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                      </div>
+                      <div class="row mb-3">
+                        <label for="datepicker" class="col-sm-2 col-form-label"
+                          >Due date</label
+                        >
+                        <input type="date" id="datepicker" />
+                      </div>
+
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                      <button type="submit" class="btn btn-primary">
+                        Save changes
+                      </button>
+                    </form>
+                    <!-- End of Form Code -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End of Modal Code! -->
+          </section>
+        </section>
+        <section class="col-6">
+          <table id="information-table" class="table">
+            <tr>
+              <th scope="col">Project name</th>
+              <th scope="col">Project type</th>
+              <th scope="col">Due date</th>
+            </tr>
+          </table>
+        </section>
       </section>
-      <table id="information-table" class="table">
-        <tr>
-          <th scope="col">Project name</th>
-          <th scope="col">Project type</th>
-          <th scope="col">Due date</th>
-        </tr>
-      </table>
     </section>
 
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+      integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0="
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
+    <script src="script.js"></script>
   </body>
 </html>
